@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Empêche l'optimiseur de supprimer les fichiers d'adhan (ils sont cherchés par leur nom). -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@raw/adhan,@raw/adhan_fajr" />

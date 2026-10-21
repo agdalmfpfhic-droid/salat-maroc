@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- Croissant -->
+    <path android:fillColor="#F2C14E"
+        android:pathData="M48,22 A14,14 0 1,0 62,40 A11,11 0 1,1 48,22 Z" />
+    <!-- Dôme -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M36,62 C36,50 46,44 54,40 C62,44 72,50 72,62 Z" />
+    <!-- Corps de la mosquée -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M34,62 L74,62 L74,82 L34,82 Z" />
+    <!-- Porte -->
+    <path android:fillColor="#0B6E4F"
+        android:pathData="M49,82 L49,72 C49,68 59,68 59,72 L59,82 Z" />
+    <!-- Minaret -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M77,44 L83,44 L83,82 L77,82 Z" />
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M76,44 L80,36 L84,44 Z" />
+</vector>

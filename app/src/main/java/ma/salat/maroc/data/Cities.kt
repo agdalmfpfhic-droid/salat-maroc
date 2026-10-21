@@ -1,0 +1,75 @@
+package ma.salat.maroc.data
+
+data class City(
+    val id: String,
+    val nameFr: String,
+    val nameAr: String,
+    val lat: Double,
+    val lon: Double,
+)
+
+/** Villes marocaines préchargées (coordonnées du centre-ville). */
+object Cities {
+    const val DEFAULT_ID = "casablanca"
+
+    val all: List<City> = listOf(
+        City("rabat", "Rabat", "الرباط", 34.0209, -6.8416),
+        City("casablanca", "Casablanca", "الدار البيضاء", 33.5731, -7.5898),
+        City("marrakech", "Marrakech", "مراكش", 31.6295, -7.9811),
+        City("fes", "Fès", "فاس", 34.0331, -5.0003),
+        City("tanger", "Tanger", "طنجة", 35.7595, -5.8340),
+        City("agadir", "Agadir", "أكادير", 30.4278, -9.5981),
+        City("meknes", "Meknès", "مكناس", 33.8935, -5.5473),
+        City("oujda", "Oujda", "وجدة", 34.6814, -1.9086),
+        City("kenitra", "Kénitra", "القنيطرة", 34.2610, -6.5802),
+        City("tetouan", "Tétouan", "تطوان", 35.5785, -5.3684),
+        City("sale", "Salé", "سلا", 34.0531, -6.7985),
+        City("safi", "Safi", "آسفي", 32.2994, -9.2372),
+        City("eljadida", "El Jadida", "الجديدة", 33.2316, -8.5007),
+        City("nador", "Nador", "الناظور", 35.1681, -2.9335),
+        City("benimellal", "Beni Mellal", "بني ملال", 32.3373, -6.3498),
+        City("laayoune", "Laâyoune", "العيون", 27.1253, -13.1625),
+        City("dakhla", "Dakhla", "الداخلة", 23.6848, -15.9580),
+        City("mohammedia", "Mohammédia", "المحمدية", 33.6866, -7.3830),
+        City("temara", "Témara", "تمارة", 33.9287, -6.9063),
+        City("khouribga", "Khouribga", "خريبكة", 32.8811, -6.9063),
+        City("settat", "Settat", "سطات", 33.0010, -7.6166),
+        City("berrechid", "Berrechid", "برشيد", 33.2655, -7.5875),
+        City("taza", "Taza", "تازة", 34.2100, -4.0100),
+        City("errachidia", "Errachidia", "الرشيدية", 31.9314, -4.4246),
+        City("ouarzazate", "Ouarzazate", "ورزازات", 30.9189, -6.8934),
+        City("alhoceima", "Al Hoceïma", "الحسيمة", 35.2517, -3.9372),
+        City("larache", "Larache", "العرائش", 35.1932, -6.1557),
+        City("ksarelkebir", "Ksar El Kébir", "القصر الكبير", 35.0017, -5.9093),
+        City("khemisset", "Khémisset", "الخميسات", 33.8240, -6.0660),
+        City("guelmim", "Guelmim", "كلميم", 28.9870, -10.0574),
+        City("tiznit", "Tiznit", "تيزنيت", 29.6974, -9.7316),
+        City("taroudant", "Taroudant", "تارودانت", 30.4703, -8.8770),
+        City("inezgane", "Inezgane", "إنزكان", 30.3555, -9.5368),
+        City("essaouira", "Essaouira", "الصويرة", 31.5085, -9.7595),
+        City("ifrane", "Ifrane", "إفران", 33.5228, -5.1106),
+        City("azrou", "Azrou", "أزرو", 33.4342, -5.2213),
+        City("sefrou", "Sefrou", "صفرو", 33.8300, -4.8300),
+        City("berkane", "Berkane", "بركان", 34.9200, -2.3200),
+        City("taourirt", "Taourirt", "تاوريرت", 34.4073, -2.8973),
+        City("guercif", "Guercif", "جرسيف", 34.2257, -3.3536),
+        City("figuig", "Figuig", "فجيج", 32.1100, -1.2290),
+        City("sidikacem", "Sidi Kacem", "سيدي قاسم", 34.2260, -5.7070),
+        City("sidislimane", "Sidi Slimane", "سيدي سليمان", 34.2648, -5.9256),
+        City("ouazzane", "Ouazzane", "وزان", 34.7936, -5.5847),
+        City("chefchaouen", "Chefchaouen", "شفشاون", 35.1688, -5.2636),
+        City("khenifra", "Khénifra", "خنيفرة", 32.9394, -5.6675),
+        City("midelt", "Midelt", "ميدلت", 32.6852, -4.7451),
+        City("fbs", "Fquih Ben Salah", "الفقيه بن صالح", 32.5000, -6.6900),
+        City("kelaa", "El Kelâa des Sraghna", "قلعة السراغنة", 32.0481, -7.4083),
+        City("benguerir", "Benguerir", "ابن جرير", 32.2360, -7.9540),
+        City("youssoufia", "Youssoufia", "اليوسفية", 32.2463, -8.5294),
+        City("zagora", "Zagora", "زاكورة", 30.3324, -5.8384),
+        City("tinghir", "Tinghir", "تنغير", 31.5147, -5.5328),
+        City("tantan", "Tan-Tan", "طانطان", 28.4380, -11.1030),
+        City("smara", "Smara", "السمارة", 26.7384, -11.6719),
+        City("boujdour", "Boujdour", "بوجدور", 26.1253, -14.4846),
+    )
+
+    fun byId(id: String): City = all.firstOrNull { it.id == id } ?: all.first { it.id == DEFAULT_ID }
+}

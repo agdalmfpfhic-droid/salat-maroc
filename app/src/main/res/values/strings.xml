@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Les textes de l'interface sont dans ui/i18n/Strings.kt (arabe + français, changeable dans l'app). -->
+    <string name="app_name">Salat Maroc</string>
+</resources>
