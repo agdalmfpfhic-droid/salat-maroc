@@ -7,6 +7,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write   # pour publier l'APK dans « Releases »
+
 jobs:
   build:
     runs-on: ubuntu-24.04   # SDK Android déjà installé sur cette image
@@ -26,3 +29,12 @@ jobs:
         with:
           name: SalatMaroc-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Publier l'APK (téléchargeable directement depuis le téléphone)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk SalatMaroc.apk
+          gh release create "v1.0-${{ github.run_number }}" SalatMaroc.apk \
+            --title "Salat Maroc 1.0 (version ${{ github.run_number }})" \
+            --notes "Touchez SalatMaroc.apk pour le télécharger, puis ouvrez-le pour installer l'application." \
+            --latest
