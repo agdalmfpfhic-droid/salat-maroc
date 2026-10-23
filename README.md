@@ -77,6 +77,10 @@ Fonctionnement :
 
 ---
 
+
+### Adhan inclus
+La fabrication automatique sur GitHub ajoute l'enregistrement **« Beautiful adhan.ogg »** (Adam-synagda, Wikimedia Commons, licence **CC0** – domaine public, 2 min 34). Pour utiliser un autre adhan, déposez votre propre `adhan.mp3` ou `adhan.ogg` dans `app/src/main/res/raw/` : il sera utilisé à la place.
+
 ## 4. Confidentialité (vérifiable dans le code)
 
 | Garantie | Où |

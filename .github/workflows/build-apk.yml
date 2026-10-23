@@ -20,6 +20,16 @@ jobs:
           distribution: temurin
           java-version: 17
       - uses: gradle/actions/setup-gradle@v4
+      - name: Ajouter l'adhan (enregistrement CC0, Wikimedia Commons)
+        run: |
+          RAW=app/src/main/res/raw
+          if [ ! -f $RAW/adhan.ogg ] && [ ! -f $RAW/adhan.mp3 ]; then
+            curl -fsSL --retry 3 -A "SalatMarocBuild/1.0 (https://github.com/${{ github.repository }})" \
+              -o $RAW/adhan.ogg "https://upload.wikimedia.org/wikipedia/commons/b/b0/Beautiful_adhan.ogg"
+            # Vérifie que c'est bien le fichier attendu (1 229 032 octets)
+            test "$(stat -c%s $RAW/adhan.ogg)" -eq 1229032
+          fi
+          ls -l $RAW
       - name: Construire
         run: |
           echo "ANDROID_HOME=$ANDROID_HOME"
