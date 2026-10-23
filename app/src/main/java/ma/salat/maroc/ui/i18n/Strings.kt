@@ -257,7 +257,7 @@ object FrStrings : Strings() {
         CalcMethod.FRANCE_UOIF -> "France (UOIF)"
     }
     override fun methodDetail(m: CalcMethod) = when (m) {
-        CalcMethod.MOROCCO -> "Fajr 19°, Isha 17° (recommandé au Maroc)"
+        CalcMethod.MOROCCO -> "Fajr 19°, Isha 17°"
         CalcMethod.MWL -> "Fajr 18°, Isha 17°"
         CalcMethod.EGYPT -> "Fajr 19,5°, Isha 17,5°"
         CalcMethod.UMM_AL_QURA -> "Fajr 18,5°, Isha 90 min après Maghrib"
@@ -266,7 +266,7 @@ object FrStrings : Strings() {
     }
     override val secAsr = "École pour l'Asr"
     override fun asrName(s: AsrSchool) = when (s) {
-        AsrSchool.STANDARD -> "Maliki / Standard"
+        AsrSchool.STANDARD -> "Asr maliki"
         AsrSchool.HANAFI -> "Hanafi"
     }
     override val secAdjust = "Ajuster les horaires"
@@ -435,7 +435,7 @@ object ArStrings : Strings() {
         CalcMethod.FRANCE_UOIF -> "فرنسا (UOIF)"
     }
     override fun methodDetail(m: CalcMethod) = when (m) {
-        CalcMethod.MOROCCO -> "الفجر 19°، العشاء 17° (موصى بها في المغرب)"
+        CalcMethod.MOROCCO -> "الفجر 19°، العشاء 17°"
         CalcMethod.MWL -> "الفجر 18°، العشاء 17°"
         CalcMethod.EGYPT -> "الفجر 19.5°، العشاء 17.5°"
         CalcMethod.UMM_AL_QURA -> "الفجر 18.5°، العشاء 90 دقيقة بعد المغرب"
@@ -444,7 +444,7 @@ object ArStrings : Strings() {
     }
     override val secAsr = "مذهب العصر"
     override fun asrName(s: AsrSchool) = when (s) {
-        AsrSchool.STANDARD -> "مالكي / الجمهور"
+        AsrSchool.STANDARD -> "العصر على المذهب المالكي"
         AsrSchool.HANAFI -> "حنفي"
     }
     override val secAdjust = "تعديل الأوقات"

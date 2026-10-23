@@ -93,15 +93,11 @@ fun SettingsScreen(vm: MainViewModel, onChangePlace: () -> Unit, onOpenPrivacy: 
         PlaceCard(st.resolvePlace(null), s, onChangePlace)
 
         // ----- Méthode -----
+        // Méthode fixe : Ministère des Habous, Asr maliki (pas de choix pour l'utilisateur).
         SectionTitle(s.secMethod)
-        CalcMethod.entries.forEach { m ->
-            ChoiceButton(s.methodName(m), st.method == m, { vm.setMethod(m) }, subtitle = s.methodDetail(m))
-        }
-
-        // ----- Asr -----
-        SectionTitle(s.secAsr)
-        AsrSchool.entries.forEach { a ->
-            ChoiceButton(s.asrName(a), st.asrSchool == a, { vm.setAsr(a) })
+        SectionCard {
+            Text(s.methodName(CalcMethod.MOROCCO), style = MaterialTheme.typography.titleMedium)
+            Text(s.methodDetail(CalcMethod.MOROCCO) + " · " + s.asrName(AsrSchool.STANDARD), style = MaterialTheme.typography.bodyMedium)
         }
 
         // ----- Ajustements -----

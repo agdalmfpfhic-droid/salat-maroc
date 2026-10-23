@@ -88,8 +88,8 @@ class SettingsRepository(context: Context) {
             cityId = this[K.city] ?: d.cityId,
             manual = if (mLat != null && mLon != null) Coordinates(mLat, mLon) else null,
             lastGps = if (gLat != null && gLon != null) Coordinates(gLat, gLon) else null,
-            method = enumOr(this[K.method], d.method),
-            asrSchool = enumOr(this[K.asr], d.asrSchool),
+            method = CalcMethod.MOROCCO,        // fixe : Ministère des Habous
+            asrSchool = AsrSchool.STANDARD,     // fixe : Maliki
             adjustments = Prayer.entries.associateWith { this[K.adj(it)] ?: 0 }.filterValues { it != 0 },
             notificationsEnabled = this[K.notif] ?: d.notificationsEnabled,
             notifPrayers = this[K.notifPrayers]
