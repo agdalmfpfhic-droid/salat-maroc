@@ -100,25 +100,6 @@ fun SettingsScreen(vm: MainViewModel, onChangePlace: () -> Unit, onOpenPrivacy: 
             Text(s.methodDetail(CalcMethod.MOROCCO) + " · " + s.asrName(AsrSchool.STANDARD), style = MaterialTheme.typography.bodyMedium)
         }
 
-        // ----- Ajustements -----
-        SectionTitle(s.secAdjust)
-        SectionCard {
-            Text(s.adjustHelp, style = MaterialTheme.typography.bodyMedium)
-            Prayer.FIVE.forEach { p ->
-                AdjustRow(
-                    label = s.prayer(p),
-                    valueText = formatMinutes(st.adjustment(p), s.minutesShort),
-                    onMinus = { vm.adjust(p, -1) },
-                    onPlus = { vm.adjust(p, +1) },
-                    minusA11y = s.decreaseA11y(s.prayer(p)),
-                    plusA11y = s.increaseA11y(s.prayer(p)),
-                )
-            }
-            if (st.adjustments.values.any { it != 0 }) {
-                BigButton(s.resetAdjust, { vm.resetAdjustments() }, outlined = true)
-            }
-        }
-
         // ----- Notifications -----
         SectionTitle(s.secNotifications)
         SectionCard {
@@ -132,19 +113,6 @@ fun SettingsScreen(vm: MainViewModel, onChangePlace: () -> Unit, onOpenPrivacy: 
                 Text(s.notifWhich, style = MaterialTheme.typography.titleMedium)
                 Prayer.FIVE.forEach { p ->
                     SwitchRow(s.prayer(p), p in st.notifPrayers, { vm.togglePrayerNotif(p) })
-                }
-                Text(s.reminderBefore, style = MaterialTheme.typography.titleMedium)
-                AppSettings.REMINDER_CHOICES.chunked(3).forEach { rowChoices ->
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        rowChoices.forEach { m ->
-                            ChoiceButton(
-                                text = if (m == 0) s.reminderOff else "$m ${s.minutesShort}",
-                                selected = st.reminderMinutes == m,
-                                onClick = { vm.setReminder(m) },
-                                modifier = Modifier.weight(1f),
-                            )
-                        }
-                    }
                 }
                 SwitchRow(s.vibration, st.vibration, { vm.setVibration(it) })
                 // Option visible seulement si un fichier adhan est inclus dans l'application.

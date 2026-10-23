@@ -90,12 +90,12 @@ class SettingsRepository(context: Context) {
             lastGps = if (gLat != null && gLon != null) Coordinates(gLat, gLon) else null,
             method = CalcMethod.MOROCCO,        // fixe : Ministère des Habous
             asrSchool = AsrSchool.STANDARD,     // fixe : Maliki
-            adjustments = Prayer.entries.associateWith { this[K.adj(it)] ?: 0 }.filterValues { it != 0 },
+            adjustments = emptyMap(),           // horaires officiels, sans ajustement
             notificationsEnabled = this[K.notif] ?: d.notificationsEnabled,
             notifPrayers = this[K.notifPrayers]
                 ?.mapNotNull { n -> Prayer.entries.firstOrNull { it.name == n } }?.toSet()
                 ?: d.notifPrayers,
-            reminderMinutes = this[K.reminder] ?: d.reminderMinutes,
+            reminderMinutes = 0,                // pas de rappel avant la prière
             vibration = this[K.vibration] ?: d.vibration,
             adhanEnabled = this[K.adhan] ?: d.adhanEnabled,
             theme = enumOr(this[K.theme], d.theme),
